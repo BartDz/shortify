@@ -1915,6 +1915,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -1925,7 +1926,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     isUrlValid: function isUrlValid() {
-      return new RegExp('^(https?:\\/\\/)?' + '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + '((\\d{1,3}\\.){3}\\d{1,3}))' + '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + '(\\?[;&a-z\\d%_.~+=-]*)?' + '(\\#[-a-z\\d_]*)?$', 'i').test(this.url);
+      return new RegExp("^(https?:\\/\\/){1}([\\da-z\\.-]+\\.[a-z\\.]{2,6}|[\\d\\.]+)([\\/:?=&#]{1}[\\da-z\\.-]+)*[\\/\\?]?$").test(this.url);
     }
   },
   methods: {
@@ -1938,7 +1939,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.im_thinking = true;
       this.short_url = '';
-      axios.post('api/link/store', {
+      axios.post('/api/link/store', {
         url: this.url
       }).then(function (response) {
         _this.im_thinking = false;
@@ -1977,7 +1978,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     App: _vue_app_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }
 });
-console.log('keep calm');
 
 /***/ }),
 
@@ -20087,7 +20087,7 @@ var render = function() {
                 attrs: {
                   id: "long-url",
                   name: "long_url",
-                  type: "text",
+                  type: "url",
                   placeholder: "Long URL",
                   autocomplete: "off",
                   required: ""

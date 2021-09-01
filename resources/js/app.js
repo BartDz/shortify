@@ -8,5 +8,3 @@ const app = new Vue({
     el: '#app',
     components: { App }
 });
-
-console.log('keep calm');

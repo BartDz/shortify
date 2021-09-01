@@ -6,7 +6,7 @@
                 <div class="field">
                     <label class="label has-text-centered is-size-4" for="long-url">Enter your long URL here:</label>
                     <div class="control">
-                        <input class="input is-medium" id="long-url" name="long_url" type="text" placeholder="Long URL"
+                        <input class="input is-medium" id="long-url" name="long_url" type="url" placeholder="Long URL"
                                autocomplete="off" required v-model="url"
                                v-on:keyup.enter="addLink()">
                     </div>
@@ -24,7 +24,8 @@
                     </p>
                 </div>
 
-                <div class="field result is-grouped is-grouped-centered mt-6" :class="[ short_url ? '' : 'is-invisible' ]">
+                <div class="field result is-grouped is-grouped-centered mt-6"
+                     :class="[ short_url ? '' : 'is-invisible' ]">
                     <p class="control">
                         <label class="label has-text-centered is-size-4" for="long-url">here you go!</label>
                         <a target="_blank" :href="short_url">{{ short_url }}</a>
@@ -47,13 +48,7 @@ export default {
   },
   computed: {
     isUrlValid() {
-      return new RegExp('^(https?:\\/\\/)?' +
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
-        '((\\d{1,3}\\.){3}\\d{1,3}))' +
-        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
-        '(\\?[;&a-z\\d%_.~+=-]*)?' +
-        '(\\#[-a-z\\d_]*)?$', 'i')
-        .test(this.url);
+      return new RegExp( "^(https?:\\/\\/){1}([\\da-z\\.-]+\\.[a-z\\.]{2,6}|[\\d\\.]+)([\\/:?=&#]{1}[\\da-z\\.-]+)*[\\/\\?]?$").test(this.url);
     },
   },
   methods: {
@@ -65,7 +60,7 @@ export default {
       this.im_thinking = true;
       this.short_url = '';
 
-      axios.post('api/link/store', {
+      axios.post('/api/link/store', {
         url: this.url
       })
         .then(response => {
@@ -90,6 +85,7 @@ export default {
     opacity: 1;
     pointer-events: auto;
 }
+
 .result.is-invisible {
     opacity: 0;
     pointer-events: none;
