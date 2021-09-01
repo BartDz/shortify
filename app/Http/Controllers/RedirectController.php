@@ -15,6 +15,6 @@ class RedirectController extends Controller
             return redirect()->route('link.create');
 
         header('Location: ' . $link->url);
-        return true;
+        exit;
     }
 }
