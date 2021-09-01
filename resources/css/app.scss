@@ -2,8 +2,13 @@
 
 @import '~bulma/css/bulma.min.css';
 
+html {
+    background: #f5fffb;
+}
+
 #shortify-logo {
     width: 200px;
+    height: 208px;
     transition: transform 1s ease-out;
     &:hover {
         transform: scale(1.05) rotate(1deg);
