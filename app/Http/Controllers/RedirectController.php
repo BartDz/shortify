@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Link;
-use Illuminate\Http\Request;
 
 class RedirectController extends Controller
 {
@@ -15,6 +14,6 @@ class RedirectController extends Controller
             return redirect()->route('link.create');
 
         header('Location: ' . $link->url);
-        exit;
+        return redirect($link->url);
     }
 }

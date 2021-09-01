@@ -20,10 +20,10 @@ class RedirectControllerTest extends TestCase
         $this->link = Link::factory()->create();
     }
 
-    public function test_the_redirect_page_is_rendered()
+    public function test_the_page_is_redirected()
     {
         $this->get('/' . $this->link->slug)
-            ->assertStatus(200);
+            ->assertStatus(302);
     }
 
     public function test_the_redirect_redirects_to_an_url_if_slug_is_found()
