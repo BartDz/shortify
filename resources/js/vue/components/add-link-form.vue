@@ -1,7 +1,7 @@
 <template>
     <div class="AddLinkForm">
         <div class="columns is-centered">
-            <div class="column is-three-fifths is-10-touch is-offset-1-touch">
+            <div class="column is-three-fifths is-10-mobile is-offset-1-mobile">
 
                 <div class="field">
                     <label class="label has-text-centered is-size-4" for="long-url">Enter your long URL here:</label>

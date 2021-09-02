@@ -4,11 +4,22 @@ html {
   background: #f5fffb;
 }
 
+#app {
+  width: 90%;
+  margin: 0 auto;
+}
+
 #shortify-logo {
-  width: 200px;
-  height: 208px;
+  width: 100px;
+  height: auto;
   transition: transform 1s ease-out;
 }
 #shortify-logo:hover {
   transform: scale(1.05) rotate(1deg);
+}
+
+@media screen and (min-height: 200px) {
+  #shortify-logo {
+    width: 200px;
+  }
 }

@@ -20023,7 +20023,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "columns is-mobile is-centered mt-6" }, [
-      _c("section", { staticClass: "section is-medium is-centered" }, [
+      _c("section", { staticClass: "section is-centered" }, [
         _c("img", {
           attrs: {
             id: "shortify-logo",
@@ -20061,7 +20061,9 @@ var render = function() {
     _c("div", { staticClass: "columns is-centered" }, [
       _c(
         "div",
-        { staticClass: "column is-three-fifths is-10-touch is-offset-1-touch" },
+        {
+          staticClass: "column is-three-fifths is-10-mobile is-offset-1-mobile"
+        },
         [
           _c("div", { staticClass: "field" }, [
             _c(

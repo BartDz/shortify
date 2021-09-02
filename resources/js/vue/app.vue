@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="columns is-mobile is-centered mt-6">
-            <section class="section is-medium is-centered">
+            <section class="section is-centered">
                 <img id="shortify-logo" src="/img/logo_transparent.png" alt="Shortify logo">
             </section>
         </div>
